@@ -19,6 +19,7 @@ SGS_ALL_ACCESS:
     - admin
 
 SGS_LOGSTASH:
+  reserved: false
   backend_roles:
     - logstash
 

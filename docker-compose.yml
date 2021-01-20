@@ -13,7 +13,7 @@ services:
         target: /usr/share/elasticsearch/config/elasticsearch.yml
         read_only: true
       - type: volume
-        source: elasticsearch
+        source: elasticsearch2
         target: /usr/share/elasticsearch/data
     ports:
       - "9200:9200"
@@ -82,4 +82,4 @@ networks:
       name: nimbleinfrastaging_default
 
 volumes:
-  elasticsearch:
+  elasticsearch2:
