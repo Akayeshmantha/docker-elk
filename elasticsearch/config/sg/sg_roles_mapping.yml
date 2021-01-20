@@ -30,11 +30,13 @@ SGS_KIBANA_SERVER:
 SGS_KIBANA_USER:
   backend_roles:
     - kibanauser
+    - sg_anonymous_backendrole
 
 SGS_READALL:
   reserved: true
   backend_roles:
     - readall
+    - sg_anonymous_backendrole
 
 SGS_MANAGE_SNAPSHOTS:
   reserved: true
@@ -44,3 +46,7 @@ SGS_MANAGE_SNAPSHOTS:
 SGS_OWN_INDEX:
   users:
     - '*'
+
+sg_anonymous:
+  backend_roles:
+    - sg_anonymous_backendrole

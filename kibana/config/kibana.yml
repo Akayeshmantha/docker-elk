@@ -3,7 +3,8 @@
 ## https://github.com/elastic/kibana/blob/master/src/dev/build/tasks/os_packages/docker_generator/templates/kibana_yml.template.ts
 #
 server.name: kibana
-server.host: 0.0.0.0
+server.host: "0"
+server.basePath: "/kibana"
 elasticsearch.hosts: [ "http://elasticsearch:9200" ]
 monitoring.ui.container.elasticsearch.enabled: true
 
@@ -19,3 +20,5 @@ elasticsearch.password: kibanaserver
 
 searchguard.cookie.password: 123567818187654rwrwfsfshdhdhtegdhfzftdhncn
 searchguard.accountinfo.enabled: true
+
+searchguard.readonly_mode.roles: ["sg_anonymous"]

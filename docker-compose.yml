@@ -24,7 +24,7 @@ services:
       # see: https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
       discovery.type: single-node
     networks:
-      - elk
+    - infra
 
   logstash:
     build:
@@ -48,7 +48,7 @@ services:
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
     networks:
-      - elk
+      - infra
     depends_on:
       - elasticsearch
 
@@ -70,13 +70,16 @@ services:
       # Search Guard bundles
       NODE_OPTIONS: --max-old-space-size=2048
     networks:
-      - elk
+      - infra
     depends_on:
       - elasticsearch
 
 networks:
   elk:
     driver: bridge
+  infra:
+    external:
+      name: nimbleinfrastaging_default
 
 volumes:
   elasticsearch:
